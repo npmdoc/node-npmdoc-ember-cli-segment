@@ -1,0 +1,236 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/josemarluedke/ember-cli-segment"
+
+    >ember-cli-segment (v0.4.0)</a>
+</h1>
+<h4>Ember CLI addon that provides a clean and easy way to integrate your Ember application with Segment.com</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-cli-segment">module ember-cli-segment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-segment.contentFor">
+            function <span class="apidocSignatureSpan">ember-cli-segment.</span>contentFor
+            <span class="apidocSignatureSpan">(type, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-segment.environment">
+            function <span class="apidocSignatureSpan">ember-cli-segment.</span>environment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ember-cli-segment.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-cli-segment.contentFor">module ember-cli-segment.contentFor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-segment.contentFor.contentFor">
+            function <span class="apidocSignatureSpan">ember-cli-segment.</span>contentFor
+            <span class="apidocSignatureSpan">(type, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ember-cli-segment.environment">module ember-cli-segment.environment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ember-cli-segment.environment.environment">
+            function <span class="apidocSignatureSpan">ember-cli-segment.</span>environment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-cli-segment" id="apidoc.module.ember-cli-segment">module ember-cli-segment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-segment.contentFor" id="apidoc.element.ember-cli-segment.contentFor">
+        function <span class="apidocSignatureSpan">ember-cli-segment.</span>contentFor
+        <span class="apidocSignatureSpan">(type, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">contentFor = function (type, config) {
+  if (type === &#x27;body-footer&#x27;) {
+
+    if (!config.segment || !config.segment.WRITE_KEY) {
+      return &#x27;&#x27;;
+    }
+
+    return &#x27;&#x3c;script type=&#x22;text/javascript&#x22;&#x3e;&#x27; +
+              &#x27;!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window
+.console&#x26;&#x26;console.error&#x26;&#x26;console.error(&#x22;Segment snippet included twice.&#x22;);else{analytics.invoked=!0;analytics.methods=[&#x22;trackSubmit
+&#x22;,&#x22;trackClick&#x22;,&#x22;trackLink&#x22;,&#x22;trackForm&#x22;,&#x22;pageview&#x22;,&#x22;identify&#x22;,&#x22;reset&#x22;,&#x22;group&#x22;,&#x22;track&#x22;,&#x22;ready&#x22;,&#x22;alias&#x22;,&#x22;page&#x22;,&#x22;once&#x22;,&#x22;off&#x22;,&#x22;on&#x22;];analytics
+.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics
+}};for(var t=0;t&#x3c;analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function
+(t){var e=document.createElement(&#x22;script&#x22;);e.type=&#x22;text/javascript&#x22;;e.async=!0;e.src=(&#x22;https:&#x22;===document.location.protocol?&#x22;https
+://&#x22;:&#x22;http://&#x22;)+&#x22;cdn.segment.com/analytics.js/v1/&#x22;+t+&#x22;/analytics.min.js&#x22;;var n=document.getElementsByTagName(&#x22;script&#x22;)[0];n.parentNode
+.insertBefore(e,n)};analytics.SNIPPET_VERSION=&#x22;3.1.0&#x22;;&#x27; +
+                &#x27;analytics.load(&#x22;&#x27; + config.segment.WRITE_KEY + &#x27;&#x22;);&#x27; +
+              &#x27;}}();&#x27; +
+           &#x27;&#x3c;/script&#x3e;&#x27;;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-segment.environment" id="apidoc.element.ember-cli-segment.environment">
+        function <span class="apidocSignatureSpan">ember-cli-segment.</span>environment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">environment = function () {
+  return { };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-cli-segment.contentFor" id="apidoc.module.ember-cli-segment.contentFor">module ember-cli-segment.contentFor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-segment.contentFor.contentFor" id="apidoc.element.ember-cli-segment.contentFor.contentFor">
+        function <span class="apidocSignatureSpan">ember-cli-segment.</span>contentFor
+        <span class="apidocSignatureSpan">(type, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">contentFor = function (type, config) {
+  if (type === &#x27;body-footer&#x27;) {
+
+    if (!config.segment || !config.segment.WRITE_KEY) {
+      return &#x27;&#x27;;
+    }
+
+    return &#x27;&#x3c;script type=&#x22;text/javascript&#x22;&#x3e;&#x27; +
+              &#x27;!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window
+.console&#x26;&#x26;console.error&#x26;&#x26;console.error(&#x22;Segment snippet included twice.&#x22;);else{analytics.invoked=!0;analytics.methods=[&#x22;trackSubmit
+&#x22;,&#x22;trackClick&#x22;,&#x22;trackLink&#x22;,&#x22;trackForm&#x22;,&#x22;pageview&#x22;,&#x22;identify&#x22;,&#x22;reset&#x22;,&#x22;group&#x22;,&#x22;track&#x22;,&#x22;ready&#x22;,&#x22;alias&#x22;,&#x22;page&#x22;,&#x22;once&#x22;,&#x22;off&#x22;,&#x22;on&#x22;];analytics
+.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics
+}};for(var t=0;t&#x3c;analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function
+(t){var e=document.createElement(&#x22;script&#x22;);e.type=&#x22;text/javascript&#x22;;e.async=!0;e.src=(&#x22;https:&#x22;===document.location.protocol?&#x22;https
+://&#x22;:&#x22;http://&#x22;)+&#x22;cdn.segment.com/analytics.js/v1/&#x22;+t+&#x22;/analytics.min.js&#x22;;var n=document.getElementsByTagName(&#x22;script&#x22;)[0];n.parentNode
+.insertBefore(e,n)};analytics.SNIPPET_VERSION=&#x22;3.1.0&#x22;;&#x27; +
+                &#x27;analytics.load(&#x22;&#x27; + config.segment.WRITE_KEY + &#x27;&#x22;);&#x27; +
+              &#x27;}}();&#x27; +
+           &#x27;&#x3c;/script&#x3e;&#x27;;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ember-cli-segment.environment" id="apidoc.module.ember-cli-segment.environment">module ember-cli-segment.environment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ember-cli-segment.environment.environment" id="apidoc.element.ember-cli-segment.environment.environment">
+        function <span class="apidocSignatureSpan">ember-cli-segment.</span>environment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">environment = function () {
+  return { };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
